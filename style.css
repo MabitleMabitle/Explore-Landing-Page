@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Signika Negative", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  inline-size: 100%;
+  block-size: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-icon {
+  /* relative to the .landing  */
+  position: absolute;
+  inset-block-start: 4.5rem;
+  inset-inline-start: 5rem;
+  inline-size: 10rem;
+  block-size: 3rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding-inline: 0.5rem;
+  overflow: hidden;
+}
+
+.lines {
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.line {
+  inline-size: 2.5rem;
+  block-size: 0.2rem;
+  background-color: #d9f4de;
+  transition: transform 0.3s cubic-bezier(0.5, 0, 0, 0.5);
+}
+
+/* TOGGLING */
+.toggle .line-1 {
+  transform: rotateZ(135deg) translate(0.7rem);
+}
+.toggle .line-2 {
+  transform: rotateZ(225deg) translate(0.7rem);
+}
+
+.menu-icon strong {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #d9f4de;
+  position: absolute;
+  inset-inline-end: 0;
+}
+
+.menu {
+  transition: transform 0.3s 0.1s;
+}
+
+/* TOGGLING */
+.toggle .menu {
+  transform: translateY(-110%);
+  transition: transform 0.3s;
+}
+
+.toggle .close {
+  transform: translateY(-120%);
+  transition: transform 0.3s 0.1s;
+}
+
+.close {
+  inset-block-start: 100%;
+  transition: transform 0.3s;
+}
+
+.navigation {
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toggle .navigation,
+.toggle .navigation a {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation a {
+  font-size: 10rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  margin-block: 0.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(images/pexels-sebastian-312105.jpg) 35%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toggle .navigation a:nth-child(1) {
+  transition: letter-spacing 0.5s, opacity 0.5s 1s;
+}
+.toggle .navigation a:nth-child(2) {
+  transition: letter-spacing 0.5s, opacity 0.5s 1.2s;
+}
+.toggle .navigation a:nth-child(3) {
+  transition: letter-spacing 0.5s, opacity 0.5s 1.4s;
+}
+.toggle .navigation a:nth-child(4) {
+  transition: letter-spacing 0.5s, opacity 0.5s 1.6s;
+}
+.toggle .navigation a:nth-child(5) {
+  transition: letter-spacing 0.5s, opacity 0.5s 1.8s;
+}
+
+.navigation a:hover {
+  letter-spacing: 1rem;
+}
+
+.landing {
+  inline-size: 100%;
+  block-size: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+    url(images/pexels-sebastian-312105.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.toggle .landing {
+  filter: blur(1.5rem);
+  transition: filter 0.5s 0.5s;
+}
+
+.landing-left {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 50%;
+  block-size: 100%;
+}
+
+.main-heading {
+  position: absolute;
+  inset-block-start: 25%;
+  font-family: "Stick No Bills", sans-serif;
+  font-size: 20rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3rem;
+  z-index: 100;
+  transition: all 1s;
+}
+
+/* TOGGLING */
+.toggle .main-heading {
+  transform: translateY(-5rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.main-heading-left {
+  inset-inline-end: -1%;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.about {
+  position: absolute;
+  inset-block-end: 10rem;
+  inset-inline-start: 10rem;
+  transition: all 1s;
+}
+
+/* toggling */
+.toggle .about {
+  transform: translateX(5rem);
+  /* hiding */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.about h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.about p {
+  font-size: 1.6rem;
+  color: #d9f4de;
+  inline-size: 50rem;
+  margin-block-start: 1rem;
+  margin-block-end: 3rem;
+}
+
+.link {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+  inline-size: 14rem;
+}
+
+.link a {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-inline-end: 1rem;
+  transition: margin-right 0.3s;
+}
+
+.link a:hover {
+  margin-inline-end: 2rem;
+}
+
+.link i {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.landing-right {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inline-size: 50%;
+  block-size: 100%;
+}
+
+.social-media {
+  position: absolute;
+  inset-block-start: 5rem;
+  inset-inline-end: 5rem;
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.toggle .social-media {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.social-media i {
+  font-size: 3rem;
+  margin-inline: 1.5rem;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(images/pexels-sebastian-312105.jpg) 30%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.main-heading-right {
+  inset-inline-start: 1%;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(images/pexels-sebastian-312105.jpg) 30%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.techs {
+  position: absolute;
+  inset-block-end: 6rem;
+  inset-inline-end: 5rem;
+  z-index: 100;
+  transition: all 1s;
+}
+
+/* toggling */
+.toggle .techs {
+  transform: translateY(-5rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.techs h1 {
+  font-size: 8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(images/pexels-sebastian-312105.jpg) 30%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  text-align: right;
+}
+
+.landing-right-background {
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  background-color: #d9f4de;
+  transition: all 1s;
+}
+
+.toggle .landing-right-background {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 40%;
+  }
+  .about p {
+    inline-size: 40rem;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 35%;
+  }
+  .landing-left {
+    inline-size: 100%;
+  }
+  .main-heading {
+    font-size: 12rem;
+  }
+  .main-heading-left {
+    inset-inline-end: 50%;
+    transform: translateX(50%);
+    padding-inline-start: 3rem;
+  }
+  .about {
+    inset-block-end: 50%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 100%;
+  }
+
+  .about h1 {
+    transform: translateY(-5rem);
+  }
+
+  .main-heading-right,
+  .techs h1,
+  .social-media i {
+    -webkit-text-fill-color: #fff;
+  }
+  .landing-right-background {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .about {
+    inset-block-end: 45%;
+  }
+  .about h1 {
+    transform: translateY(-10rem);
+  }
+}
